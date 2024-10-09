@@ -15,95 +15,6 @@ section {
 .signup-link {
   border-radius: 5px;
 }
-.has-paint {
-  position: relative;
-  z-index: 3;
-  display: inline-block;
-}
-.has-paint::after {
-  content: '';
-  position: absolute;
-  /* background: url('../images/paint.png') no-repeat center center; */
-  width: 150px;
-  height: 80px;
-  top: -5%;
-  left: -10%;
-  z-index: -1;
-  background-size: cover;
-  background-position: center;
-  transform: rotate(10deg);
-}
-
-#hero-content h1 {
-  font-size: 3rem;
-}
-.report-lost-item-link {
-  color: var(--clr-secondary);
-}
-.report-lost-item-link:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-.report-found-item-link,
-.report-lost-item-link {
-  border-radius: 5px;
-}
-.hero-image-container {
-  position: relative;
-  width: 100vw;
-  height: 40%;
-  overflow: hidden;
-  bottom: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-}
-
-.hero-image-container img {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  z-index: 2;
-  transition:
-    transform 0.5s ease,
-    z-index 0.5s ease;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-.hero-image-container .img1 {
-  transform: rotate(-10deg) translateX(-50px);
-}
-.hero-image-container .img2 {
-  transform: rotate(5deg) translateX(-30px);
-}
-.hero-image-container .img3 {
-  transform: rotate(-5deg) translateX(0);
-}
-.hero-image-container .img4 {
-  transform: rotate(10deg) translateX(30px);
-}
-.hero-image-container .img5 {
-  transform: rotate(-15deg) translateX(60px);
-}
-.hero-image-container .img6 {
-  transform: rotate(5deg) translateX(90px);
-}
-.hero-image-container .img7 {
-  transform: rotate(-10deg) translateX(120px);
-}
-.hero-image-container .img8 {
-  transform: rotate(15deg) translateX(150px);
-}
-.hero-image-container .img9 {
-  transform: rotate(-5deg) translateX(180px);
-}
-
-.hero-image-container img:hover {
-  transform: scale(1.2);
-  z-index: 999;
-}
 
 /* For about us  */
 .stats-section {
@@ -221,6 +132,7 @@ section {
   color: #999;
   margin-top: 20px;
 }
+/* ==== */
 
 @media (max-width: 768px) {
   .logo h4 {

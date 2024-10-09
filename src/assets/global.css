@@ -4,7 +4,7 @@ body {
 :root {
   --clr-primary: #fff;
   --clr-secondary: #333;
-  --clr-hover: #14374333;
+  --clr-hover: #ccc;
 }
 html {
   scroll-behavior: smooth;
