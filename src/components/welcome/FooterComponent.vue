@@ -3,12 +3,6 @@
     <footer id="footer" class="footer mt-5 pt-5">
       <div class="container">
         <div class="row">
-          <!-- <div class="col-md-4">
-  <div class="logo-section">
-    <p>Find and Report Lost or Found
-      Items in Bulan easily</p>
-  </div>
-</div> -->
           <div class="col-md-3">
             <h5>Contact Info.</h5>
             <ul class="list-unstyled">
@@ -51,7 +45,7 @@
         </div>
         <div class="row mt-5">
           <div class="col-md-4">
-            <h5>Bulan Lost And Found Website</h5>
+            <h5>Vue Component Libraries</h5>
             <div class="social-icons">
               <a href="#"><i class="fab fa-facebook"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>

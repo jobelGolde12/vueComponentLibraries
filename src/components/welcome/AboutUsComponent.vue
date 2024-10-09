@@ -13,9 +13,9 @@
                 development through powerful, reusable, and customizable Vue.js components.
               </p>
               <h5 class="text-primary text-start">Tools:</h5>
-              <div class="d-flex flex-row gap-2">
+              <div class="tools-container d-flex flex-row gap-2">
                 <i class="bi bi-bootstrap text-success"></i>
-                <i class="bi bi-vue text-success"></i>
+                <img src="../../assets/images/vue.png" alt="" class="vue-img" />
               </div>
             </div>
             <div class="col-lg-6 text-left about-image-container">
@@ -47,5 +47,11 @@ export default {
   position: relative;
   width: 80%;
   height: 60%;
+}
+.tools-container .vue-img {
+  position: relative;
+  width: 20px;
+  height: 15px;
+  transform: translateY(30%);
 }
 </style>
