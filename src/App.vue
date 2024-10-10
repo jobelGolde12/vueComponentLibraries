@@ -1,17 +1,18 @@
 
 
 <template>
-  <div class="main-container">
-    <WelcomeView v-if="inWelcome" class="welcome" />
-    <div class="view" v-if="!inWelcome">
-      <RouterView />
-    </div>
+  <!-- <div class="main-container"> -->
+  <!-- <WelcomeView v-if="inWelcome" class="welcome" /> -->
+  <!-- v-if="!inWelcome" -->
+  <div class="view">
+    <RouterView />
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
 import { RouterView } from 'vue-router'
-import WelcomeView from './views/HomeView.vue'
+// import WelcomeView from './views/HomeView.vue'
 export default {
   name: 'app',
   data() {
@@ -20,8 +21,8 @@ export default {
     }
   },
   components: {
-    RouterView,
-    WelcomeView
+    RouterView
+    // WelcomeView
   }
 }
 </script>

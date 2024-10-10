@@ -14,8 +14,10 @@
       <a href="#" class="text-decoration-none signup-link px-2 py-2 btn btn-light"
         >Sign up <i class="bi bi-arrow-right text-dark"></i
       ></a>
-      <a href="#" class="text-decoration-none text-light bg-dark px-2 py-2 get-started-link"
-        >Get Started</a
+      <router-link
+        to="/dashboardView"
+        class="text-decoration-none text-light bg-dark px-2 py-2 get-started-link"
+        >Get Started</router-link
       >
     </div>
   </div>
