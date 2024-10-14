@@ -8,56 +8,142 @@
         </div>
 
         <router-link
+          class="hover"
           to="/dashboardView"
           :class="{ 'text-success': $route.path === '/dashboardView' }"
           ><i class="bi bi-house"></i> Home</router-link
         >
-        <div class="dropdown my-2 categories-container">
-          <button
-            class="bg-light dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="bi bi-bookmarks"></i>
-            Categories
-          </button>
 
-          <ul class="dropdown-menu">
-            <router-link
-              class="py-0"
-              to="/dashboardView"
-              :class="{ 'text-success': $route.path === '/dashboardView' }"
-              ><i class="bi bi-house"></i> Header</router-link
-            >
-            <router-link
-              class="py-0"
-              to="/dashboardView"
-              :class="{ 'text-success': $route.path === '/dashboardView' }"
-              ><i class="bi bi-house"></i> Footer</router-link
-            >
-            <router-link
-              class="py-0"
-              to="/dashboardView"
-              :class="{ 'text-success': $route.path === '/dashboardView' }"
-              ><i class="bi bi-house"></i> Footer</router-link
-            >
-            <router-link
-              class="py-0"
-              to="/dashboardView"
-              :class="{ 'text-success': $route.path === '/dashboardView' }"
-              ><i class="bi bi-house"></i> Footer</router-link
-            >
-            <router-link
-              class="py-0"
-              to="/dashboardView"
-              :class="{ 'text-success': $route.path === '/dashboardView' }"
-              ><i class="bi bi-house"></i> Footer</router-link
-            >
-          </ul>
-        </div>
         <a href="#"><i class="bi bi-coin"></i> Pricing</a>
         <a href="#"><i class="bi bi-file-earmark-text"></i> My Collections</a>
+
+        <div class="categories bg-light">
+          <p class="text-dark d-flex align-ietms-center" @click="toggleCategoriesFunc">
+            Categories <i class="categories-icon  bi ms-2"></i>
+          </p>
+          <ul class="d-flex flex-column gap-2 ms-3">
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Hero Section</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Headers</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Footers</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Navagation</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Footers</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="m-0 p-0"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Content Section</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Forms</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Cards</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Modals</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Carousel</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                List</router-link
+              >
+            </li>
+
+            <li>
+              <router-link
+                class="link"
+                to="/profileComponent"
+                :class="{ 'text-success': $route.path === '/profileComponent' }"
+              >
+                Footers</router-link
+              >
+            </li>
+          </ul>
+        </div>
+
         <router-link
           to="/profileComponent"
           :class="{ 'text-success': $route.path === '/profileComponent' }"
@@ -85,6 +171,21 @@ export default {
         name: 'User'
       }
     }
+  },
+  methods: {
+    toggleCategoriesFunc() {
+      const categoriesDiv = document.querySelector('.categories')
+      const icon = document.querySelector('.categories-icon')
+      categoriesDiv.addEventListener('click', function () {
+        categoriesDiv.classList.toggle('expanded')
+
+        if (categoriesDiv.classList.contains('expanded')) {
+          icon.classList.add('bi-caret-down-fill')
+        } else {
+          icon.classList.add('bi-caret-up-fill')
+        }
+      })
+    }
   }
 }
 </script>
@@ -94,6 +195,10 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
+}
+.main-container::-webkit-scrollbar {
+  display: none;
 }
 .sidebar {
   width: 250px;
@@ -144,9 +249,31 @@ export default {
 .categories-container button {
   border: none;
 }
-/* .categories-container .dropdown-menu {
-  position: relative;
-  height: 50%;
-  overflow: scroll;
-} */
+
+.categories {
+  width: auto;
+  height: 10%;
+  overflow: hidden;
+  transition: height 5s ease;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.categories ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories.expanded {
+  height: auto;
+}
+.categories ul li .link {
+  margin: 0;
+  padding: 0;
+}
+.link:hover {
+  transform: translateX(5%);
+  color: #198754;
+}
 </style>
