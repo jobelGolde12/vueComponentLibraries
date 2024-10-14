@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>This is the right</h1>
+    <router-view />
   </div>
 </template>
   <script>

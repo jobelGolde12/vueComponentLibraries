@@ -23,4 +23,7 @@ export default {
 </script>
 <style lang="css" scoped>
 /* @import '../'; */
+a:hover {
+  background: #f8f9fa;
+}
 </style>

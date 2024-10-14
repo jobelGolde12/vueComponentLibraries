@@ -109,4 +109,7 @@ export default {
   color: #999;
   margin-top: 20px;
 }
+a:hover {
+  background: #343a40;
+}
 </style>

@@ -22,7 +22,19 @@ const router = createRouter({
     {
       path: '/dashboardView',
       name: 'dashboardView',
-      component: () => import('../views/DashboardView.vue')
+      component: () => import('../views/DashboardView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'homeComponent',
+          component: () => import('../components/dashboard/RightRouteContent/HomeComponent.vue')
+        },
+        {
+          path: '/profileComponent',
+          name: 'rofileComponent',
+          component: () => import('../components/dashboard/RightRouteContent/ProfileComponent.vue')
+        }
+      ]
     }
   ]
 })

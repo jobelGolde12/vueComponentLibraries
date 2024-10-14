@@ -15,3 +15,6 @@ html {
 .hover:hover {
   color: var(--clr-hover);
 }
+a:hover {
+  background: #f8f9fa;
+}
