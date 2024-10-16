@@ -35,6 +35,11 @@ const router = createRouter({
           component: () => import('../components/dashboard/RightRouteContent/ProfileComponent.vue')
         }
       ]
+    },
+    {
+      path: '/pricingComponent',
+      name: 'pricingComponent',
+      component: () => import('../components/welcome/PricingComponent.vue')
     }
   ]
 })

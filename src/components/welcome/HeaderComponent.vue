@@ -6,6 +6,9 @@
         <a href="#about" class="text-dark text-decoration-none">About</a>
         <a href="#howItsWork" class="text-dark text-decoration-none">How it's work?</a>
         <a href="#" class="text-dark text-decoration-none">Contact</a>
+        <router-link to="/pricingComponent" class="text-dark text-decoration-none"
+          >Pricing</router-link
+        >
       </div>
 
       <div class="d-flex flex-row gap-3">
