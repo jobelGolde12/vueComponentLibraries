@@ -14,7 +14,7 @@
           class="card pointer"
           v-for="(data, index) in componentsData"
           :key="data.id"
-          @click="toggleOpenComponent"
+          @click="toggleOpenComponent(data)"
         >
           <div class="card-img-top">
             <img :src="data.img" alt="Component image" />
@@ -48,6 +48,9 @@
   <ComponentModal
     :isModalVisible="isModalVisible"
     @update:isModalVisible="isModalVisible = $event"
+    :title="selectedItem.title"
+    :category="selectedItem.category"
+    :img="selectedItem.img"
   />
 </template>
     <script>
@@ -122,7 +125,8 @@ export default {
           img: img
         }
       ],
-      isModalVisible: false
+      isModalVisible: false,
+      selectedItem: []
     }
   },
   methods: {
@@ -130,8 +134,10 @@ export default {
       this.componentsData[index].isLiked = !this.componentsData[index].isLiked
       this.isModalVisible = true
     },
-    toggleOpenComponent() {
+    toggleOpenComponent(data) {
       this.isModalVisible = !this.isModalVisible
+      this.selectedItem = data
+      console.log(this.selectedItem)
     }
   },
   components: {

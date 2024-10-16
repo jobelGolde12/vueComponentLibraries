@@ -19,7 +19,7 @@
 
         <div class="categories bg-light">
           <p class="text-dark d-flex align-ietms-center" @click="toggleCategoriesFunc">
-            Categories <i class="categories-icon  bi ms-2"></i>
+            Categories <i class="categories-icon bi ms-2"></i>
           </p>
           <ul class="d-flex flex-column gap-2 ms-3">
             <li>
@@ -157,6 +157,10 @@
             <a href="#">Notifications</a>
           </div>
         </div>
+
+        <router-link to="trialComponent" class="text-primary hover"
+          >This is only for the trial component while developing</router-link
+        >
       </div>
     </div>
   </div>

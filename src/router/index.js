@@ -33,6 +33,11 @@ const router = createRouter({
           path: '/profileComponent',
           name: 'rofileComponent',
           component: () => import('../components/dashboard/RightRouteContent/ProfileComponent.vue')
+        },
+        {
+          path: '/trialComponent',
+          name: 'trialComponent',
+          component: () => import('../components/welcome/TrialComponent.vue')
         }
       ]
     },
