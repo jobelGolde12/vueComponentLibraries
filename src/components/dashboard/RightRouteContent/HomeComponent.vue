@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <div class="container mt-5">
       <!-- Search Bar -->
       <div class="search-bar input-group mb-3">
@@ -10,7 +10,12 @@
       </div>
 
       <div class="card-grid">
-        <div class="card pointer" v-for="(data, index) in componentsData" :key="data.id">
+        <div
+          class="card pointer"
+          v-for="(data, index) in componentsData"
+          :key="data.id"
+          @click="toggleOpenComponent"
+        >
           <div class="card-img-top">
             <img :src="data.img" alt="Component image" />
           </div>
@@ -39,9 +44,15 @@
       </div>
     </div>
   </div>
+
+  <ComponentModal
+    :isModalVisible="isModalVisible"
+    @update:isModalVisible="isModalVisible = $event"
+  />
 </template>
     <script>
 import img from '../../../assets/images/vue.png'
+import ComponentModal from '../ComponentModal.vue'
 export default {
   name: 'homeComponent',
   data() {
@@ -110,18 +121,31 @@ export default {
           isLiked: false,
           img: img
         }
-      ]
+      ],
+      isModalVisible: false
     }
   },
   methods: {
     toggleLikeComponentFunc(index) {
       this.componentsData[index].isLiked = !this.componentsData[index].isLiked
+      this.isModalVisible = true
+    },
+    toggleOpenComponent() {
+      this.isModalVisible = !this.isModalVisible
     }
+  },
+  components: {
+    ComponentModal
   }
 }
 </script>
     <style lang="css" scoped>
 @import '../../../assets/global.css';
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
 .search-bar {
   max-width: 500px;
   margin: 20px auto;
