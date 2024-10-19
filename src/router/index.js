@@ -45,6 +45,16 @@ const router = createRouter({
       path: '/pricingComponent',
       name: 'pricingComponent',
       component: () => import('../components/welcome/PricingComponent.vue')
+    },
+    {
+      path: '/loginComponent',
+      name: 'loginComponent',
+      component: () => import('../components/welcome/LoginComponent.vue')
+    },
+    {
+      path: '/signupComponent',
+      name: 'signupComponent',
+      component: () => import('../components/welcome/SignupComponent.vue')
     }
   ]
 })

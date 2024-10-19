@@ -10,6 +10,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <style>
+      * {
+        box-sizing: border-box;
+      }
       body {
         position: absolute;
         width: 100vw;
@@ -21,12 +24,19 @@
         min-width: 103vw;
         height: 100vh;
         overflow-x: hidden;
-        left: 0;
         top: 0;
         padding: 0;
         margin: 0;
         background: #fff;
         transform: translateX(-2.4%);
+        background: #000;
+      }
+      @media screen and (max-width: 1024px) {
+        #app {
+          transform: translateX(-6%);
+          min-width: 106vw;
+          top: -6%;
+        }
       }
     </style>
   </head>

@@ -5,6 +5,7 @@ body {
   --clr-primary: #fff;
   --clr-secondary: #333;
   --clr-hover: #ccc;
+  --clr-hover2: #198754;
 }
 html {
   scroll-behavior: smooth;
