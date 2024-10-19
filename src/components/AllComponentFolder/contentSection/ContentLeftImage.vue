@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container d-flex justify-content-center align-items-center">
+  <div class="main-container d-flex justify-content-center align-items-center bg-light">
     <div class="container d-flex flex-row gap-3">
       <div class="image-container">
         <img :src="img" alt="Image" class="rounded" />
@@ -25,7 +25,7 @@
   </div>
 </template>
   <script>
-import img from '../../assets/images/everyComponentsImage/img1.jpg'
+import img from '../../../assets/images/everyComponentsImage/img1.jpg'
 export default {
   name: 'trialComponent',
   data() {

@@ -1,9 +1,9 @@
 <template>
-  <div class="main-container bg-light">
+  <div class="main-container bg-light ms-0 ps-0">
     <div
       class="header py-2 px-3 container-fuild d-flex flex-row justify-content-between align-items-center"
     >
-      <div class="logo ms-4">
+      <div class="logo m">
         <h4 class="text-dark fw-semibold">Logo</h4>
       </div>
 
@@ -14,8 +14,8 @@
         <a href="#" class="text-dark text-decoration-none p-2">Blogs</a>
       </div>
 
-      <div class="action d-flex flex-row gap-3 d-none d-md-block d-lg-block">
-        <div class="btn btn-light">Login</div>
+      <div class="action d-flex flex-row gap-5 d-none d-md-block d-lg-block me-4">
+        <div class="btn btn-light me-3">Login</div>
         <div class="btn btn-dark">Get started</div>
       </div>
 
@@ -61,9 +61,9 @@
   </div>
 </template>
       <script>
-import img from '../../assets/images/signup-icon.svg'
+import img from '../../../assets/images/signup-icon.svg'
 export default {
-  name: 'trialComponent',
+  name: 'hero1Component',
   data() {
     return {
       img: img

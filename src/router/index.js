@@ -33,11 +33,6 @@ const router = createRouter({
           path: '/profileComponent',
           name: 'rofileComponent',
           component: () => import('../components/dashboard/RightRouteContent/ProfileComponent.vue')
-        },
-        {
-          path: '/trialComponent',
-          name: 'trialComponent',
-          component: () => import('../components/welcome/TrialComponent.vue')
         }
       ]
     },
@@ -55,6 +50,30 @@ const router = createRouter({
       path: '/signupComponent',
       name: 'signupComponent',
       component: () => import('../components/welcome/SignupComponent.vue')
+    },
+
+    //pag in click ni user an view icon
+    {
+      path: '/contentLeftImage',
+      name: 'contentLeftImage',
+      component: () =>
+        import('../components/AllComponentFolder/contentSection/ContentLeftImage.vue')
+    },
+    {
+      path: '/contentRightImage',
+      name: 'contentRightImage',
+      component: () =>
+        import('../components/AllComponentFolder/contentSection/ContentRightImage.vue')
+    },
+    {
+      path: '/hero1Component',
+      name: 'hero1Component',
+      component: () => import('../components/AllComponentFolder/hero/hero1Component.vue')
+    },
+    {
+      path: '/hero2Component',
+      name: 'hero2Component',
+      component: () => import('../components/AllComponentFolder/hero/Hero2Component.vue')
     }
   ]
 })

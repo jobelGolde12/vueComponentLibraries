@@ -9,6 +9,7 @@
         </button>
       </div>
 
+      <CategoriesList :categories="allCategories" />
       <div class="card-grid">
         <div
           class="card pointer"
@@ -37,7 +38,7 @@
             </span>
             <div class="d-flex flex-row justify-content-between align-items-center">
               <h5 class="card-title">{{ data.title }}</h5>
-              <i class="bi bi-copy"></i>
+              <i class="bi bi-download"></i>
             </div>
           </div>
         </div>
@@ -51,14 +52,17 @@
     :title="selectedItem.title"
     :category="selectedItem.category"
     :img="selectedItem.img"
+    :path="selectedItem.path"
   />
 </template>
     <script>
-import img from '../../../assets/images/vue.png'
+// import img from '../../../assets/images/vue.png'
 import contentLeftImg from '../../../assets/images/everyComponentsImage/centerContent/content-left-img.png'
 import contentRightImg from '../../../assets/images/everyComponentsImage/centerContent/content-right-img.png'
 import hero1 from '../../../assets/images/everyComponentsImage/hero/hero1.png'
+import hero2 from '../../../assets/images/everyComponentsImage/hero/hero2.png'
 import ComponentModal from '../ComponentModal.vue'
+import CategoriesList from './homeSubContent/categoriesList.vue'
 export default {
   name: 'homeComponent',
   data() {
@@ -69,67 +73,41 @@ export default {
           title: 'left image',
           category: 'content',
           isLiked: false,
-          img: contentLeftImg
+          img: contentLeftImg,
+          component: '@components/AllComponentFolder/ContentSection/ContentLeftImage.vue',
+          path: '/contentLeftImage'
         },
         {
           id: '2',
           title: 'right image',
           category: 'content',
           isLiked: false,
-          img: contentRightImg
+          img: contentRightImg,
+          component: '@components/AllComponentFolder/ContentSection/ContentRightImage.vue',
+          path: '/contentRightImage'
         },
         {
           id: '3',
           title: 'Hero',
           category: 'hero',
           isLiked: false,
-          img: hero1
+          img: hero1,
+          component: '@components/AllComponentFolder/hero/Hero1Component.vue',
+          path: '/hero1Component'
         },
         {
           id: '4',
-          title: 'Navagation',
-          category: 'navbar',
+          title: 'Hero Gradient bg',
+          category: 'hero',
           isLiked: false,
-          img: img
-        },
-        {
-          id: '5',
-          title: 'Navagation',
-          category: 'navbar',
-          isLiked: false,
-          img: img
-        },
-        {
-          id: '6',
-          title: 'Navagation',
-          category: 'navbar',
-          isLiked: false,
-          img: img
-        },
-        {
-          id: '7',
-          title: 'Navagation',
-          category: 'navbar',
-          isLiked: false,
-          img: img
-        },
-        {
-          id: '8',
-          title: 'Navagation',
-          category: 'navbar',
-          isLiked: false,
-          img: img
-        },
-        {
-          id: '9',
-          title: 'Navagation',
-          category: 'navbar',
-          isLiked: false,
-          img: img
+          img: hero2,
+          component: '@components/AllComponentFolder/hero/Hero2Component.vue',
+          path: '/hero2Component'
         }
       ],
       isModalVisible: false,
-      selectedItem: {}
+      selectedItem: {},
+      allCategories: []
     }
   },
   methods: {
@@ -141,10 +119,21 @@ export default {
       this.isModalVisible = !this.isModalVisible
       this.selectedItem = data
       console.log(this.selectedItem)
+    },
+    getAllCategoriesFunc() {
+      for (let i = 0; i < this.componentsData.length; i++) {
+        if (!this.allCategories.includes(this.componentsData[i].category)) {
+          this.allCategories.push(this.componentsData[i].category)
+        }
+      }
     }
   },
   components: {
-    ComponentModal
+    ComponentModal,
+    CategoriesList
+  },
+  mounted() {
+    this.getAllCategoriesFunc()
   }
 }
 </script>
@@ -153,6 +142,7 @@ export default {
 .main-container {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .search-bar {

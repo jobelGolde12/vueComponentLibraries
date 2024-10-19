@@ -162,10 +162,6 @@
             <a href="#">Notifications</a>
           </div>
         </div>
-
-        <router-link to="trialComponent" class="text-primary hover"
-          >This is only for the trial component while developing</router-link
-        >
       </div>
     </div>
   </div>

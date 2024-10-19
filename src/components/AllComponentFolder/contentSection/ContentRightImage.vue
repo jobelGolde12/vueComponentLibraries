@@ -1,7 +1,7 @@
 <template>
   <div class="main-container d-flex justify-content-center align-items-center">
     <div class="container d-flex flex-row gap-3">
-      <div class="content-container">
+      <div class="content-container p-3">
         <h4 class="mb-2 fw-semibold">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, minima.
         </h4>
@@ -25,7 +25,7 @@
   </div>
 </template>
     <script>
-import img from '../../assets/images/everyComponentsImage/img1.jpg'
+import img from '../../../assets/images/everyComponentsImage/img1.jpg'
 export default {
   name: 'trialComponent',
   data() {
