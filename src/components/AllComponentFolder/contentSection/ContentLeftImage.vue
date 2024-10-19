@@ -1,7 +1,11 @@
 <template>
   <div class="main-container d-flex justify-content-center align-items-center">
     <div class="container d-flex flex-row gap-3">
-      <div class="content-container">
+      <div class="image-container">
+        <img :src="img" alt="Image" class="rounded" />
+      </div>
+
+      <div class="content-container p-1">
         <h4 class="mb-2 fw-semibold">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, minima.
         </h4>
@@ -17,14 +21,10 @@
           <i class="bi bi-twitter text-success d-block fs-5"></i>
         </div>
       </div>
-
-      <div class="image-container p-1">
-        <img :src="img" alt="Image" class="rounded" />
-      </div>
     </div>
   </div>
 </template>
-    <script>
+  <script>
 import img from '../../assets/images/everyComponentsImage/img1.jpg'
 export default {
   name: 'trialComponent',
@@ -35,7 +35,7 @@ export default {
   }
 }
 </script>
-    <style lang="css" scoped>
+  <style lang="css" scoped>
 .main-container {
   position: absolute;
   width: 100%;

@@ -12,7 +12,7 @@
 
 <script>
 import { RouterView } from 'vue-router'
-// import WelcomeView from './views/HomeView.vue'
+// import WelcomeView from './views/HomeView.vue'w
 export default {
   name: 'app',
   data() {

@@ -55,6 +55,8 @@
 </template>
     <script>
 import img from '../../../assets/images/vue.png'
+import contentLeftImg from '../../../assets/images/everyComponentsImage/centerContent/content-left-img.png'
+import contentRightImg from '../../../assets/images/everyComponentsImage/centerContent/content-right-img.png'
 import ComponentModal from '../ComponentModal.vue'
 export default {
   name: 'homeComponent',
@@ -63,17 +65,17 @@ export default {
       componentsData: [
         {
           id: '1',
-          title: 'Navagation',
-          category: 'navbar',
+          title: 'left image',
+          category: 'content',
           isLiked: false,
-          img: img
+          img: contentLeftImg
         },
         {
           id: '2',
-          title: 'Navagation',
-          category: 'navbar',
+          title: 'right image',
+          category: 'content',
           isLiked: false,
-          img: img
+          img: contentRightImg
         },
         {
           id: '3',
@@ -126,7 +128,7 @@ export default {
         }
       ],
       isModalVisible: false,
-      selectedItem: []
+      selectedItem: {}
     }
   },
   methods: {
