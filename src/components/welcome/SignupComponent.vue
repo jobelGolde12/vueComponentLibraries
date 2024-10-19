@@ -57,11 +57,7 @@
     </div>
 
     <div class="container image-container d-none d-lg-block">
-      <img
-        src="../../assets/images/everyComponentsImage/img1.jpg"
-        alt="Login image"
-        class="rounded"
-      />
+      <img src="../../assets/images/signup-icon.svg" alt="Login image" class="rounded" />
     </div>
   </div>
 </template>

@@ -57,6 +57,7 @@
 import img from '../../../assets/images/vue.png'
 import contentLeftImg from '../../../assets/images/everyComponentsImage/centerContent/content-left-img.png'
 import contentRightImg from '../../../assets/images/everyComponentsImage/centerContent/content-right-img.png'
+import hero1 from '../../../assets/images/everyComponentsImage/hero/hero1.png'
 import ComponentModal from '../ComponentModal.vue'
 export default {
   name: 'homeComponent',
@@ -79,10 +80,10 @@ export default {
         },
         {
           id: '3',
-          title: 'Navagation',
-          category: 'navbar',
+          title: 'Hero',
+          category: 'hero',
           isLiked: false,
-          img: img
+          img: hero1
         },
         {
           id: '4',

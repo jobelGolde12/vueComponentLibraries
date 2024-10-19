@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div class="main-container bg-light">
     <div
       class="header py-2 px-3 container-fuild d-flex flex-row justify-content-between align-items-center"
     >
@@ -59,9 +59,8 @@
       </div>
     </section>
   </div>
-  <div class="dark-bg"></div>
 </template>
-    <script>
+      <script>
 import img from '../../assets/images/signup-icon.svg'
 export default {
   name: 'trialComponent',
@@ -72,7 +71,7 @@ export default {
   }
 }
 </script>
-    <style lang="css" scoped>
+      <style lang="css" scoped>
 * {
   box-sizing: border-box;
 }
@@ -80,25 +79,10 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('../../assets/images/everyComponentsImage/img1.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-}
-.dark-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
-}
-.header {
-  z-index: 999;
 }
 #hero {
   width: 100%;
   height: 80%;
-  z-index: 5;
 }
 #hero .right,
 #hero .left {
