@@ -38,7 +38,7 @@
             </span>
             <div class="d-flex flex-row justify-content-between align-items-center">
               <h5 class="card-title">{{ data.title }}</h5>
-              <i class="bi bi-download"></i>
+              <i class="bi bi-download" @click.stop="downloadComponentFile(data)"></i>
             </div>
           </div>
         </div>
@@ -71,6 +71,7 @@ export default {
         {
           id: '1',
           title: 'left image',
+          name: 'ContentLeftImage',
           category: 'content',
           isLiked: false,
           img: contentLeftImg,
@@ -80,6 +81,7 @@ export default {
         {
           id: '2',
           title: 'right image',
+          name: 'ContentRightImage',
           category: 'content',
           isLiked: false,
           img: contentRightImg,
@@ -89,6 +91,7 @@ export default {
         {
           id: '3',
           title: 'Hero',
+          name: 'Hero1Component',
           category: 'hero',
           isLiked: false,
           img: hero1,
@@ -98,6 +101,7 @@ export default {
         {
           id: '4',
           title: 'Hero Gradient bg',
+          name: 'Hero2Component',
           category: 'hero',
           isLiked: false,
           img: hero2,
@@ -125,6 +129,25 @@ export default {
         if (!this.allCategories.includes(this.componentsData[i].category)) {
           this.allCategories.push(this.componentsData[i].category)
         }
+      }
+    },
+    async downloadComponentFile(data) {
+      try {
+        const response = await fetch(`/download/${data.name}.vue`)
+        if (response.ok) {
+          const blob = await response.blob()
+          const url = window.URL.createObjectURL(blob)
+          const a = document.createElement('a')
+          a.href = url
+          a.download = `${data.name}.vue` // Download with the correct filename
+          document.body.appendChild(a)
+          a.click()
+          a.remove()
+        } else {
+          console.error('Failed to download file:', response.statusText)
+        }
+      } catch (error) {
+        console.error('Error downloading file:', error)
       }
     }
   },
