@@ -12,7 +12,9 @@
       </div>
 
       <div class="d-flex flex-row gap-3">
-        <a href="#" class="btn btn-light text-decoration-none">Login</a>
+        <router-link to="/loginComponent" class="btn btn-light text-decoration-none"
+          >Login</router-link
+        >
         <a href="#hero-content" class="btn btn-dark text-decoration-none">Signup</a>
       </div>
       <div class="bi bi-list fs-1 fw-bolder pointer hover d-block d-lg-none"></div>

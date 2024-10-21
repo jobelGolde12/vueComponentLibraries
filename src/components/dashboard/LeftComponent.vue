@@ -14,7 +14,12 @@
           ><i class="bi bi-house"></i> Home</router-link
         >
 
-        <a href="#"><i class="bi bi-coin"></i> Pricing</a>
+        <router-link
+          class="hover"
+          to="/pricingComponent"
+          :class="{ 'text-success': $route.path === '/pricingComponent' }"
+          ><i class="bi bi-coin"></i> My plan</router-link
+        >
         <a href="#"><i class="bi bi-file-earmark-text"></i> My Collections</a>
 
         <div class="categories bg-light">
@@ -157,10 +162,6 @@
             <a href="#">Notifications</a>
           </div>
         </div>
-
-        <router-link to="trialComponent" class="text-primary hover"
-          >This is only for the trial component while developing</router-link
-        >
       </div>
     </div>
   </div>

@@ -35,18 +35,19 @@
             </div>
 
             <div class="d-flex flex-row gap-3">
-              <i
-                class="bi bi-eye d-block pointer hover"
+              <router-link
+                :to="path"
+                class="bi bi-eye d-block pointer hover text-decoration-none text-dark"
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
                 title="View Code"
-              ></i>
+              ></router-link>
 
               <i
-                class="bi bi-copy d-block pointer hover"
+                class="bi bi-download d-block pointer hover"
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
-                title="Copy Code"
+                title="Download code"
               ></i>
             </div>
           </div>
@@ -60,7 +61,7 @@
 <script>
 export default {
   name: 'componentModal',
-  props: ['isModalVisible', 'title', 'category', 'img'],
+  props: ['isModalVisible', 'title', 'category', 'img', 'path'],
   methods: {
     closeModal() {
       this.$emit('update:isModalVisible', false)

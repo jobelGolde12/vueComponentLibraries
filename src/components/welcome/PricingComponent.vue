@@ -78,6 +78,7 @@ export default {
   position: absolute;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 .pricing-header {
   text-align: center;
@@ -105,7 +106,7 @@ export default {
   font-size: 2.5rem;
   font-weight: bold;
 }
-.btn-select {
+.btn-select {w
   background-color: #563d7c;
   color: #fff;
   border-radius: 25px;
