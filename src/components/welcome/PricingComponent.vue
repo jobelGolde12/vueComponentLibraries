@@ -106,7 +106,7 @@ export default {
   font-size: 2.5rem;
   font-weight: bold;
 }
-.btn-select {w
+.btn-select {
   background-color: #563d7c;
   color: #fff;
   border-radius: 25px;
