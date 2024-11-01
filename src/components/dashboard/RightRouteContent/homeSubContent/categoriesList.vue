@@ -6,6 +6,7 @@
         class="category px-2 py-1 rounded text-dark pointer"
         v-for="data in categories"
         :key="data.index"
+        @click="chooseCategoryFunc(data)"
       >
         {{ data }}
       </div>
@@ -15,8 +16,10 @@
 <script>
 export default {
   props: ['categories'],
-  mounted() {
-    console.log('categories ' + this.categories)
+  methods: {
+    chooseCategoryFunc(data) {
+      this.$emit('chooseCategoryFunc', data)
+    }
   }
 }
 </script>
