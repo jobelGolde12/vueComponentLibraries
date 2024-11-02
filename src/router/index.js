@@ -74,6 +74,11 @@ const router = createRouter({
       path: '/hero2Component',
       name: 'hero2Component',
       component: () => import('../components/AllComponentFolder/hero/Hero2Component.vue')
+    },
+    {
+      path: '/adminDashboard',
+      name: 'adminDasboard',
+      component: () => import('../views/AdminDashboard.vue')
     }
   ]
 })
