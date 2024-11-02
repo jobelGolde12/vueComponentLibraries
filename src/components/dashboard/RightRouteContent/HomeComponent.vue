@@ -2,7 +2,7 @@
   <div class="main-container">
     <div class="container mt-5">
       <!-- Search Bar -->
-      <form @input.prevent="SearchDataFunc">
+      <form @submit.prevent="SearchDataFunc">
         <div class="search-bar input-group mb-3">
           <input
             type="text"
@@ -27,6 +27,7 @@
         @toggleLikeComponentFunc="toggleLikeComponentFunc"
         @toggleOpenComponent="toggleOpenComponent"
         :SearchData="SearchData"
+        :chooseCategory="chooseCategory"
       />
     </div>
   </div>
@@ -119,9 +120,13 @@ export default {
       }
     },
     chooseCategoryFunc(data) {
-      console.log('Selected category => ' + data)
+      this.chooseCategory = []
+      console.log('the selected category is => ' + data)
       for (let i = 0; i < this.componentsData.length; i++) {
         if (this.componentsData[i].category === data) {
+          this.chooseCategory.push(this.componentsData[i])
+          // console.log('the component is => ' + JSON.stringify(this.chooseCategory[i]))
+        } else if (data === 'All') {
           this.chooseCategory.push(this.componentsData[i])
         }
       }

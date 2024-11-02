@@ -7,6 +7,7 @@
         v-for="data in categories"
         :key="data.index"
         @click="chooseCategoryFunc(data)"
+        :class="{ active: data === selectedCategory }"
       >
         {{ data }}
       </div>
@@ -15,10 +16,16 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      selectedCategory: ''
+    }
+  },
   props: ['categories'],
   methods: {
     chooseCategoryFunc(data) {
       this.$emit('chooseCategoryFunc', data)
+      this.selectedCategory = data
     }
   }
 }
@@ -30,5 +37,12 @@ export default {
 }
 .category:hover {
   background: rgba(0, 0, 0, 0.2);
+}
+.active {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+.active:hover {
+  background: rgba(0, 0, 0, 0.4);
 }
 </style>

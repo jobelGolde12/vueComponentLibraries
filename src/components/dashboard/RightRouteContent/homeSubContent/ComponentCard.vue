@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- When user is not searcing  -->
-    <div class="card-grid" v-if="SearchData.search === ''">
+    <!-- When user is not searcing  ibig sabihon all component will be able to see-->
+    <div class="card-grid" v-if="SearchData.search === '' && chooseCategory.length === 0">
       <div
         class="card pointer"
         v-for="(data, index) in componentsData"
@@ -34,11 +34,49 @@
         </div>
       </div>
     </div>
-
-    <div class="card-grid" v-if="SearchData.search !== ''">
+    <!-- <div v-if="SearchData.search !== ''">
+      {{ SearchData.data }}
+    </div> -->
+    <!-- When user is searcing : ibig sabihon ma iimud niya an component basi sa in search niya  -->
+    <div class="card-grid" v-if="SearchData.search !== '' && chooseCategory.length === 0">
       <div
         class="card pointer"
         v-for="(data, index) in SearchData.data"
+        :key="data.id"
+        @click="toggleOpenComponent(data)"
+      >
+        <div class="card-img-top">
+          <img :src="data.img" alt="Component image" />
+        </div>
+        <div class="card-body">
+          <span class="tag">{{ data.category }}</span>
+          <span class="steps">
+            <i
+              class="bi bi-heart-fill pointer"
+              :class="{ 'text-warning ': data.isLiked == true }"
+              v-if="data.isLiked == true"
+              @click="toggleLikeComponentFunc(index)"
+            ></i>
+            <i
+              class="bi bi-heart pointer"
+              :class="{ 'text-warning': data.isLiked == true }"
+              v-if="data.isLiked !== true"
+              @click="toggleLikeComponentFunc(index)"
+            ></i>
+          </span>
+          <div class="d-flex flex-row justify-content-between align-items-center">
+            <h5 class="card-title">{{ data.title }}</h5>
+            <i class="bi bi-download"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- When the user select a specific category  -->
+    <div class="card-grid" v-if="SearchData.search || !SearchData.search">
+      <div
+        class="card pointer"
+        v-for="(data, index) in chooseCategory"
         :key="data.id"
         @click="toggleOpenComponent(data)"
       >
@@ -73,7 +111,7 @@
 <script>
 export default {
   name: 'componentCard',
-  props: ['componentsData', 'SearchData'],
+  props: ['componentsData', 'SearchData', 'chooseCategory'],
   methods: {
     toggleLikeComponentFunc(index) {
       this.$emit('toggleLikeComponentFunc', index)
