@@ -1,7 +1,6 @@
 <template>
   <div class="main-container">
     <div class="container mt-5">
-      <!-- Search Bar -->
       <div class="search-bar input-group mb-3">
         <input type="text" class="form-control" placeholder="Search..." aria-label="Search" />
         <button class="btn btn-outline-secondary" type="button">
@@ -56,7 +55,6 @@
   />
 </template>
     <script>
-// import img from '../../../assets/images/vue.png'
 import contentLeftImg from '../../../assets/images/everyComponentsImage/centerContent/content-left-img.png'
 import contentRightImg from '../../../assets/images/everyComponentsImage/centerContent/content-right-img.png'
 import hero1 from '../../../assets/images/everyComponentsImage/hero/hero1.png'

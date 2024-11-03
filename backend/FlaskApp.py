@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
+from FlaskLimiter import limiter,rate_limit_exceeded
 
 from auth.ProcessLoginLogout import ToLoginLogout
 from auth.CreateDeleteAccount import ToCreateDeleteAccount
@@ -13,6 +14,9 @@ app.config['SESSION_COOKIE_SAMESITE'] = 'None'
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 
 CORS(app, supports_credentials=True)
+
+limiter.init_app(app)
+app.register_error_handler(429, rate_limit_exceeded)
 
 app.register_blueprint(ToLoginLogout,url_prefix="/auth")
 app.register_blueprint(ToCreateDeleteAccount,url_prefix="/auth")
